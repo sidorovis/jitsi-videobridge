@@ -1407,6 +1407,12 @@ public class Conference
                  * implement it as well.
                  */
                 endpoint.sctpConnectionReady(sctpConnection);
+                // Trigger SCTP connection ready event
+                if (eventAdmin != null)
+                {
+                    eventAdmin.postEvent(
+                            EventFactory.endpointSctpConnReady(endpoint));
+                }
             }
         }
     }
