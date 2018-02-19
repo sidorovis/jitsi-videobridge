@@ -23,6 +23,7 @@ public class OSGiHandler
             "net.java.sip.communicator.impl.configuration.USE_PROPFILE_CONFIG",
             "true");
         OSGi.setBundleConfig(new JvbBundleConfig());
+        OSGi.setClassLoader(ClassLoader.getSystemClassLoader());
 
         activator =
             new BundleActivator()
